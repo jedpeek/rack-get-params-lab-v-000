@@ -18,7 +18,7 @@ class Application
       resp.write "Path Not Found"
     end
 
-    if cart_req.path
+    if cart_req.pathmatch("/cart")
     end
     resp.finish
   end

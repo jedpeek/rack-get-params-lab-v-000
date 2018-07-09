@@ -18,7 +18,7 @@ class Application
       resp.write "Path Not Found\n"
     end
 
-    if req.path.match("/cart")
+    if req.path.match(/cart/)
       if @@cart.count == 0
       resp.write "Your cart is empty"
       else
@@ -28,7 +28,7 @@ class Application
       resp.write "Path Not Found\n"
     end
 
-    if req.path.match("/add")
+    if req.path.match(/add/)
       search_term = req.params["q"]
       if @@items.include?(search_term)
         resp.write "added #{search_term}"

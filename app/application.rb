@@ -21,7 +21,7 @@ class Application
     if cart_req.path.match("/cart")
       if @@cart.count == 0
       resp.write "Your cart is empty"
-    else
+      else
       @@cart.each{|item| resp.write "#{item}"}
       end
     end

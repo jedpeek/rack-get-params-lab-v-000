@@ -6,7 +6,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    cart_req = Rack::Request.new(/cart)
+    cart_req = Rack::Request.new(env)
     if req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
@@ -19,6 +19,7 @@ class Application
     end
 
     if cart_req.path
+    end
     resp.finish
   end
 

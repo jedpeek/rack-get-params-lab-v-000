@@ -19,6 +19,7 @@ class Application
     end
 
     if cart_req.pathmatch("/cart")
+      resp.write "Your cart is empty"
     end
     resp.finish
   end

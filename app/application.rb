@@ -19,7 +19,7 @@ class Application
       resp.write "Path Not Found"
     end
 
-    if cart_req.path.match("/cart")
+    if req.path.match("/cart")
       if @@cart.count == 0
       resp.write "Your cart is empty"
       else

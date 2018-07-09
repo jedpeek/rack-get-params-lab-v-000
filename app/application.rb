@@ -18,7 +18,7 @@ class Application
       resp.write "Path Not Found"
     end
 
-    if cart_req.path.match(/cart)
+    if cart_req.path.match("/cart")
       resp.write "Your cart is empty"
     end
     resp.finish

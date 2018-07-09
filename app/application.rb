@@ -27,8 +27,12 @@ class Application
     else
       resp.write "Path not found"
     end
+
+    if req.path.match("/add")
+      
     resp.finish
   end
+  
 
   def handle_search(search_term)
     if @@items.include?(search_term)

@@ -32,7 +32,7 @@ class Application
       item = req.params["item"]
       if @@items.include?(item)
         resp.write "added #{item}"
-        @@cart << "#{search_term}"
+        @@cart << item
       else
         resp.write "We don't have that item\n"
       end

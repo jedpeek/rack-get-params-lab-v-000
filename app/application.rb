@@ -24,6 +24,8 @@ class Application
       else
       @@cart.each{|item| resp.write "#{item}"}
       end
+    else
+      resp.write "Path not found"
     end
     resp.finish
   end

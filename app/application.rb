@@ -6,7 +6,7 @@ class Application
   def call(env)
     resp = Rack::Response.new
     req = Rack::Request.new(env)
-    
+
     if req.path.match(/items/)
       @@items.each do |item|
         resp.write "#{item}\n"
@@ -29,10 +29,13 @@ class Application
     end
 
     if req.path.match("/add")
-      
+      if @@items.include?(search_term)
+        resp.write "added #{search_term}"
+
+
     resp.finish
   end
-  
+
 
   def handle_search(search_term)
     if @@items.include?(search_term)
